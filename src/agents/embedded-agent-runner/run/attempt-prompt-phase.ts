@@ -539,7 +539,7 @@ export async function runEmbeddedAttemptPromptPhase(
         persistToolResultProjections: async () => {
           if (
             !isRawModelRun &&
-            (inHistorySystemUpdates ||
+            (sessionRuntime.prepareSystemPromptUpdate ||
               sessionPromptState.pendingToolSurface ||
               toolResultPromptProjectionState.frozen.size > 0)
           ) {
